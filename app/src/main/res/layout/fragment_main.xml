@@ -1,0 +1,32 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                tools:context=".MainActivityFragment">
+
+    <android.support.v7.widget.SearchView
+        android:id="@+id/artist_search_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        app.queryHint="Artist name"
+        app:iconifiedByDefault="false"
+        android:layout_alignParentTop="true"/>
+
+    <ListView
+        android:id="@+id/artist_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/artist_search_text">
+    </ListView>
+
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="No artists found"
+        android:visibility="gone"
+        android:layout_below="@+id/artist_search_text"/>
+
+</RelativeLayout>

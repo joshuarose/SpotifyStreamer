@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="list_item_artist_style">
+        <item name="android:paddingTop">@dimen/artist_image_padding_height</item>
+        <item name="android:paddingBottom">@dimen/artist_image_padding_height</item>
+        <item name="android:paddingLeft">@dimen/artist_image_padding_width</item>
+        <item name="android:paddingRight">@dimen/artist_image_padding_width</item>
+        <item name="android:layout_width">@dimen/artist_image_width</item>
+        <item name="android:layout_height">@dimen/artist_image_height</item>
+    </style>
+
+</resources>
