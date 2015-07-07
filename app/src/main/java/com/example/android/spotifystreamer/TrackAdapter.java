@@ -2,6 +2,8 @@ package com.example.android.spotifystreamer;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import kaaes.spotify.webapi.android.models.Image;
@@ -19,7 +22,7 @@ import kaaes.spotify.webapi.android.models.Track;
 /**
  * Created by joshuarose on 7/6/15.
  */
-public class TrackAdapter extends BaseAdapter {
+public class TrackAdapter extends BaseAdapter implements Parcelable {
     private Context mContext;
     private List<Track> mTracks;
 
@@ -82,4 +85,43 @@ public class TrackAdapter extends BaseAdapter {
             albumText = (TextView)view.findViewById(R.id.album_text);
         }
     }
+
+    protected TrackAdapter(Parcel in) {
+        mContext = (Context) in.readValue(Context.class.getClassLoader());
+        if (in.readByte() == 0x01) {
+            mTracks = new ArrayList<Track>();
+            in.readList(mTracks, Track.class.getClassLoader());
+        } else {
+            mTracks = null;
+        }
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeValue(mContext);
+        if (mTracks == null) {
+            dest.writeByte((byte) (0x00));
+        } else {
+            dest.writeByte((byte) (0x01));
+            dest.writeList(mTracks);
+        }
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<TrackAdapter> CREATOR = new Parcelable.Creator<TrackAdapter>() {
+        @Override
+        public TrackAdapter createFromParcel(Parcel in) {
+            return new TrackAdapter(in);
+        }
+
+        @Override
+        public TrackAdapter[] newArray(int size) {
+            return new TrackAdapter[size];
+        }
+    };
 }

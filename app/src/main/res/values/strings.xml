@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Spotify Streamer</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_song">SongActivity</string>
+    <string name="test_album_name">Ghost Stories</string>
+    <string name="test_track_name">A Sky Full of Stars</string>
+    <string name="top_ten_track_title">Top 10 Tracks</string>
 </resources>

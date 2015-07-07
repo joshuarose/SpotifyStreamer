@@ -22,7 +22,7 @@
         android:layout_gravity="center_vertical"
         android:layout_toRightOf="@+id/album_image"
         android:gravity="center_vertical"
-        tools:text="A Sky Full of Stars"
+        tools:text="@string/test_track_name"
         android:layout_centerVertical="true"/>
 
     <TextView
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:gravity="center_vertical"
-        tools:text="Ghost Stories"
+        tools:text="@string/test_album_name"
         android:layout_below="@+id/track_text"
         android:layout_alignLeft="@+id/track_text"/>
 </RelativeLayout>

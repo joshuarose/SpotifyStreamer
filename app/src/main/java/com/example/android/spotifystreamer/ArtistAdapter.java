@@ -61,7 +61,8 @@ public class ArtistAdapter extends BaseAdapter {
         if (artist != null){
             viewHolder.artistText.setText(artist.name);
             if (artist.images != null && artist.images.size() > 0){
-                String url = artist.images.get(0).url;
+                int smallestImageIndex = artist.images.size() -1;
+                String url = artist.images.get(smallestImageIndex).url;
                 if (!url.isEmpty()){
                     Picasso.with(mContext).load(url).resize(200,200).into(viewHolder.artistImage);
                 }

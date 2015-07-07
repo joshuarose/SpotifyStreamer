@@ -14,7 +14,7 @@ public class TrackActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_track);
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("Top 10 Tracks");
+        actionBar.setTitle(R.string.top_ten_track_title);
         actionBar.setSubtitle(getIntent().getStringExtra(TrackActivity.ARTIST_NAME));
 
     }
